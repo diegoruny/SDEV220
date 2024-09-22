@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+{% block content %}
+        <h1 class='mb-4 text-4xl font-bold font-sans text-center'>Registration Form</h1>
+        <form class='mx-auto w-96  rounded' action="{% url 'form:contact_form' %}" method='POST'>
+            {% csrf_token %}
+            {{ form.as_div }}
+            <button name='submit'class=" rounded bg-indigo-500 px-4 py-2 font-bold text-xl text-white block mx-auto">Submit</button>
+        </form>
+        
+{% endblock content %}                                       
