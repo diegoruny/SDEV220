@@ -1,0 +1,21 @@
+{% extends "static/base.html" %}
+
+{% block content %}
+    <h1 class="text-3xl text-center">Login</h1>
+    <div class="w-7/12 mx-auto" >
+        <form action="{% url 'my_app:login' %}" method="POST">
+            {% csrf_token %}
+            <div class="p-4">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="border-2 p-2 w-full">
+            </div>
+            <div class="p-4">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="border-2 p-2 w-full">
+            </div>
+            <div class="p-4">
+                <button type="submit" class="bg-blue-500 text-white p-2">Login</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

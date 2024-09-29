@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+</head>
+<body class="font-mono mx-auto">
+    <nav class="bg-gray-800 text-white p-4">
+        <ul class="flex justify-between">
+            
+            <li>
+                <a href="{% url 'my_app:posts' %}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'forms:register' %}">Register</a>
+            </li>
+            
+            <li>
+                <a href="{% url 'forms:login' %}">Login</a>
+            </li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>
