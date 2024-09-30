@@ -1,0 +1,11 @@
+.ipynb_checkpoints/
+m01-02/
+m02/
+module-1-collaboration/
+.vscode/
+__pycache__/
+*.pyc
+.cursorrules
+.cursorconfig
+db.sqlite3
+.venv/
