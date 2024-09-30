@@ -1,3 +1,9 @@
 .venv/
 .vscode/
 db.sqlite3/
+.cursorrules
+__pycache__/
+*.pyc~
+*.pyo~
+*.pyd~
+*.pyw~

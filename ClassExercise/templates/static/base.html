@@ -6,24 +6,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Blog</title>
 </head>
-<body class="font-mono mx-auto">
-    <nav class="bg-gray-800 text-white p-4">
-        <ul class="flex justify-between">
+<body class="font-sans mx-auto">
+    <nav class="bg-gray-800 text-white p-4 ">
+        <ul class="flex justify-between items-center mx-auto w-7/12">
             
-            <li>
-                <a href="{% url 'my_app:posts' %}">Home</a>
-            </li>
-            <li>
-                <a href="{% url 'forms:register' %}">Register</a>
+            <li class="">
+                <a href="{% url 'my_app:index' %}">Home</a>
             </li>
             
-            <li>
-                <a href="{% url 'forms:login' %}">Login</a>
-            </li>
+            
+            {% if user.is_authenticated %}
+                
+                <li class="flex justify-between self-end items-center">
+                    <span class="mr-2">Hello, {{ user.username }}</span>
+                    <form action="{% url 'forms:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-blue-500 text-white p-2 w-full">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li class="flex justify-between self-end items-center">
+                    <a href="{% url 'forms:register' %}">Register</a> /
+                    <a href="{% url 'forms:login' %}">Login</a>
+                </li>
+            {% endif %}
         </ul>
     </nav>
     {% block content %}
-    {% endblock %}
+    {% endblock content %}
     
 </body>
 </html>
